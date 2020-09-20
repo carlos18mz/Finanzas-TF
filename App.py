@@ -35,15 +35,15 @@ app = Flask(__name__)
 #mysql = MySQL(app)
 
 #SQLALCHEMY
-#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://uv1d04zrxpnefepn:qm6Qum3mzDQZgKLCiCLc@b9gqzffgxhbnvmbdttw0-mysql.services.clever-cloud.com:3306/b9gqzffgxhbnvmbdttw0"
-#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-#db = SQLAlchemy(app)
-#ma = Marshmallow(app)
-
-#LOCALHOST
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost:3306/finanzas"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://uv1d04zrxpnefepn:qm6Qum3mzDQZgKLCiCLc@b9gqzffgxhbnvmbdttw0-mysql.services.clever-cloud.com:3306/b9gqzffgxhbnvmbdttw0"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+ma = Marshmallow(app)
+
+#LOCALHOST
+#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost:3306/finanzas"
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#db = SQLAlchemy(app)
 #ma = Marshmallow(app)
 
 #==========================================================================
