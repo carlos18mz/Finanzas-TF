@@ -1,0 +1,122 @@
+{% extends 'layoutAuthenticated.html' %}
+{% block body %}
+
+<div>
+
+<div class="row">
+
+  
+  <!--============TRANSACCTION TABLE======================================-->
+
+        <div class="col-md-4">
+        <div class="container-fluid">
+
+            <div class="card mx-1 my-3 px-1">
+                <div class="card-title my-4" style="align-self: center;font-weight: bold;"><p><strong>Últimas transacciones</strong></p></div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead style="color: #EA7D34;">
+                        <th scope="col" style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center">Linea de crédito</th>
+                        <th scope="col" style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center">Monto cancelado</td>
+                        <th scope="col" style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center">Fecha</td>
+                      </thead>
+                      <tbody>
+                        {% for transaction in transactions %}
+                        <tr>
+                            <td style="vertical-align: middle; " align="center">{{ transaction.feeNumber }}</td>
+                            <td style="vertical-align: middle;" align="center">S/.{{ transaction.amount }}</td>
+                            <td style="vertical-align: middle;" align="center">{{ transaction.transactionDate.strftime('%Y-%m-%d') }}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </div>
+
+
+    <!--========CREDIT LINE TABLE=========================================================================================-->
+
+    <div class="col-md-8">
+        <div class="container-fluid">
+              <div class="card mx-1 my-3 px-1">
+                <div class="card-header card-header-primary">
+                    <p style="font-weight: bold; font-size: 20px;"><strong>Estado de línea de crédito</strong></p>
+                  <h4 class="card-title "></h4>
+                  <p class="card-category"> Verifique sus líneas de credito disponible</p>
+                </div>
+                <div class="card mx-1 my-3 px-1">
+                    <div class="col-12">
+                        <form action="/new-credit-line", method="POST">
+                            <button type="submit" class="btn btn btn-orange my-2 my-sm-0 mx-2 float-right">Agregar +</button>
+                        </form>
+                    </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead style="color: #EA7D34;">
+                        <th style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center" scope="col">Monto Total</td>
+                        <th style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center" scope="col">Intereses</td>
+                        <th style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center" scope="col">Proximo pago</td>
+                        <th style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center" scope="col">Proxima cuota</td>
+                        <th style="text-align: center; vertical-align: middle; font-size: 1.0em;" align="center" scope="col">Operaciones</td>
+                      </thead>
+                      <tbody>
+                        {% for creditLine in creditLines %}
+                        <tr>
+                            <td style="vertical-align: middle; " align="center">S/.{{ creditLine.remainingAmount }}</td>
+                            <td style="vertical-align: middle;" align="center">{{ creditLine.interestRate }}%</td>
+                            <td style="vertical-align: middle;" align="center">{{ creditLine.initialDate.strftime('%Y-%m-%d') }}</td>
+                            <td style="vertical-align: middle;" align="center">S/.{{ creditLine.eachPayment }}</td>
+                            <td style="align-content: center;">
+                                <a class="btn btn-warning"  data-toggle="modal" data-target="#exampleModal">Pagar</a>
+                            </td>
+                        </tr>
+
+                        <!-- MODAL-->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Esta seguro que desea pagar una cuota del préstamo</h5>
+                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6 class="modal-header">Monto Prestado :  S/.{{creditLine.totalAmountLended}}</h6>
+                                    <h6 class="modal-header">Plazo de pago : {{creditLine.paydays}} dias</h6>
+                                    <h6 class="modal-header">Intereses : {{creditLine.interestRate}}%</h6>
+                                    <h6 class="modal-header">Monto Total :  S/.{{creditLine.totalAmountPay}}</h6>
+                                    <h6 class="modal-header">Deuda restante :  S/.{{creditLine.remainingAmount}}</h6>
+                                    <h6 class="modal-header">Monto a pagar de esta cuota :  S/.{{creditLine.eachPayment}}</h6>
+                                    <h6 class="modal-header">Número de cuota : {{creditLine.feeDone+1}}</h6>       
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                <form action="/pay-credit-fee/{{creditLine.id}}", method="POST">
+                                  <button type="submit" class="btn btn-deep-orange">Pagar</button>
+                                </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+</div>
+</div>
+{% endblock %}

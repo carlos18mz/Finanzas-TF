@@ -1,0 +1,51 @@
+{% extends 'layoutAuthenticated.html' %}
+{% block body %}
+
+
+    <div class="col-md-4 offset-md-4 my-4">
+        <div  class="card card-body">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages%}
+        
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ message }}</strong> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+            <fieldset>
+                <form action="/loanApplication", method="POST">
+                    <p style="font-weight: bold;"><strong>Solicitar línea de credito</strong></p>
+                    <div class="md-form">
+                        <input type="number" class="form-control .bmd-label-static" name="totalMount">
+                        <label for="inputLGEx">Monto total</label>    
+                    </div>
+                    <input type="date" class="form-control .bmd-label-static" name="fecha" placeholder="fecha de inicio" />
+                    <div class="md-form">
+                        <select class="form-control" name="month">
+                            <option value=6>6 meses</option>
+                            <option value=12>12 meses</option>
+                            <option value=18>18 meses</option>
+                            <option value=36>36 meses</option>
+                            <option value=48>48 meses</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success btn-block">
+                        Solicitar línea de credito
+                    </button>
+                    </form>
+                <form action="/cancelLoanApplication", method="POST">
+                    <button type="submit" class="btn btn-outline-success btn-block">
+                        Cancelar
+                    </button>
+                </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

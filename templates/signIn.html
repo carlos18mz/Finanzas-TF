@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+<div style="height: 100vh;
+width: 98vw;">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-6 .mx-auto align-items-center">
+            <div  class="card card-body">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages%}
+            
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+       
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+    
+            
+                <fieldset>
+                    <form action="/login", method="POST">
+                        <p style="font-weight: bold;  text-align: center;"><strong>Iniciar Sesion</strong></p>
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix"></i>
+                            <input type="text" class="form-control .bmd-label-static" name="email" >
+                            <label for="inputLGEx">Correo</label>
+                        </div>
+                        <div class="md-form">
+                            <i class="fas fa-lock prefix"></i>
+                            <input type="password" class="form-control .bmd-label-static" name="password">
+                            <label for="inputLGEx">Contraseña</label>
+                        </div>
+                        <div class="col-md-offset-3 text-center">
+                        <button style="align-self:center;" type="submit" class="btn btn-deep-orange"><i class="fas fa-magic mr-1"></i>  Inicar sesion</button>     
+                        </div>
+                    
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+  </div>
+
+
+    
+{% endblock %}

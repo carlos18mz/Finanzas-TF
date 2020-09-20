@@ -1,0 +1,660 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<div>
+
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-1 my-auto text-white showcase-img">
+          <div style="  padding-top: 50px;
+          padding-right: 50px;
+          padding-bottom: 50px;
+          padding-left: 80px;">
+            <h2 class="wow fadeIn" style="color:aliceblue; font-weight: bold;">Bienvenido a tu banco de confianza</h2>
+            <h2 class="wow fadeIn" style="color:aliceblue; font-size: 20px;">Solicita tu crédito para lo que necesites pagandolo en cómodas cuotas</h2>
+        
+          </div>
+
+        </div>
+        <div class="col-lg-6 order-lg-2 my-auto showcase-text">
+          <img class="d-block w-100" src="{{ url_for('static', filename='bank2.png') }}" rel="nofollow">
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+<div class="card" style="align-content: center; padding-top: 80px;padding-bottom: 80px;">
+  <h1 class="display-4" style="text-align:center; color:  rgba(234,126,51,1);" >Nuestros beneficios</h1>
+  <hr/>
+   <!--Carousel Wrapper-->
+
+  <div style="margin: 20px 40px 20px 40px;">
+    <div id="carousel-example-2" class="carousel slide" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-2" data-slide-to="1"></li>
+      <li data-target="#carousel-example-2" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <div class="view">
+          <img class="d-block w-100" src="https://www.santander.com.pe/public/assets/img/Desktop/HOME.jpg"
+            alt="First slide">
+          <div class="mask rgba-black-light"></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Financiamiento para tu negocio</h3>
+          <p>Te ofrecemos liquidez para cubrir tus necesidades financieras.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!--Mask color-->
+        <div class="view">
+          <img class="d-block w-100" src="https://www.santander.com.pe/public/assets/img/Desktop/HOME2.jpg"
+            alt="Second slide">
+          <div class="mask rgba-black-strong"></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Cuenta corriente</h3>
+          <p>Administra eficientemente tu dinero.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!--Mask color-->
+        <div class="view">
+          <img class="d-block w-100" src="https://www.santander.com.pe/public/assets/img/Desktop/HOME3.jpg"
+            alt="Third slide">
+          <div class="mask rgba-black-slight"></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Aprende a usar tu Office Banking</h3>
+          <p>Entérate cómo realizar diferentes transacciones rápidamente en tu computadora,
+            utilizando nuestra banca por internet Office Banking.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+    </div>
+  </div>
+  <!--/.Carousel Wrapper-->
+
+  <hr/>
+
+  <!-- Icons Grid -->
+  <section class="features-icons second-section text-center" id="features" style="padding-top: 30px;">
+        <div class="container">
+          <div class="row">
+    
+            <div class="col-lg-4 my-auto">
+              <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+                <div class="row">
+                  <img class="d-block w-50" src="{{ url_for('static', filename='bank5.png') }}" rel="nofollow" style="  margin-left: auto;
+                  margin-right: auto;
+                  display: block;">
+                </div>
+                <a href="client.html">
+                  <h3 class="wow bounceInDown" data-wow-duration="0.7s" style="color:  rgba(234,126,51,1);">Cuentas</h3>
+                </a>
+                <p class="lead mb-0 font-weight-normal">La manera mas sencilla de llevar tus operaciones en el banco, mediante nuestro aplicativo móvil.
+                </p>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 my-auto">
+              <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+                <div class="row">
+                  <div style="background: linear-gradient(
+                    rgba(0,0,0,.4),
+                    rgba(0,0,0,.1),
+                    rgba(0,0,0,.4)
+                  ),;">
+                    <img class="d-block w-50" src="{{ url_for('static', filename='bank4.png') }}" rel="nofollow" style="  margin-left: auto;
+                    margin-right: auto;
+                    display: block;">
+                  </div>
+                </div>
+                <a href="driver.html">
+                  <h3 class="wow bounceInDown" data-wow-duration="0.7s" style="color:  rgba(234,126,51,1);">Pagos</h3>
+                </a>
+                <p class="lead mb-0 font-weight-normal">Realizar el pago de tus operaciones será mucho mas fácil, rápido y seguro.</p>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 my-auto">
+              <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+                <div class="row">
+                  <div style="background: linear-gradient(
+                    rgba(0,0,0,1),
+                    rgba(0,0,0,1),
+                    rgba(0,0,0,1)
+                  ),;">
+                    <img class="d-block w-50" src="{{ url_for('static', filename='bank3.png') }}" rel="nofollow" style="  margin-left: auto;
+                    margin-right: auto;
+                    display: block;">
+                  </div>
+                </div>
+                <a href="bank.html">
+                  <h3 class="wow bounceInDown" data-wow-duration="0.7s" style="color:  rgba(234,126,51,1);">Cuentas sin intereses</h3>
+                </a>
+                <p class="lead mb-0 font-weight-normal">¡Mira todos los comercios afiliados a Pagos Sin Intereses!</p>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    
+  </section>
+</div>
+
+<!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+<!---wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->
+<!--FORO DE CONSULTAS TRABAJADORES DEL M,ES-->
+<section class="showcase">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-lg-6 order-lg-1 text-black showcase-img">
+        
+        <div class="my-auto" style="padding: 20px;">
+          <div class="card my-auto">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">Foto de consultas:</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#profile" data-toggle="tab">
+                        <i class="fas fa-money-check"></i> Servicios
+                        <div class="ripple-container"></div>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#messages" data-toggle="tab">
+                        <i class="fas fa-laptop-code"></i> Plataforma web
+                        <div class="ripple-container"></div>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#settings" data-toggle="tab">
+                        <i class="fas fa-taxi"></i> Cuotas de pago
+                        <div class="ripple-container"></div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="profile">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" checked>
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>¿La Cuenta Corriente paga intereses?</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>¿Dónde veo mis descuentos?</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>¿Es posible cambiar de beneficiarios?
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" checked>
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>¿Existe riesgo de perder todo mi dinero?</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane" id="messages">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" checked>
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          ¿Los programas de fidelidad tienen algún costo?
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>¿Puedo pedir un Crédito Efectivo mayor a S/87,500?</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane" id="settings">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="">
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          ¿Puedo prepagar mi Crédito para descontar intereses?</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" checked>
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>¿Puedo solicitar un Crédito de Estudios para un pregrado en Perú?
+                        </td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" checked>
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>
+                          ¿Qué características de mi cuenta a plazo puedo modificar?</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">Responder</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">Denunciar</i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-2 text-black showcase-img">
+        <div class="my-auto" style="padding: 20px;">
+          <div class="card my-uto">
+            <div class="card-header card-header-warning">
+              <h4 class="card-title">Empleado del mes</h4>
+              <p class="card-category">Nuevos empleados: 15 de octubre de 2020</p>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead class="text-warning">
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Salary</th>
+                  <th>Country</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Dakota Rice</td>
+                    <td>$36,738</td>
+                    <td>Niger</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Minerva Hooper</td>
+                    <td>$23,789</td>
+                    <td>Curaçao</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Sage Rodriguez</td>
+                    <td>$56,142</td>
+                    <td>Netherlands</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Philip Chaney</td>
+                    <td>$38,735</td>
+                    <td>Korea, South</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+
+        $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+        if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+          if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+            $('.fixed-plugin .dropdown').addClass('open');
+          }
+
+        }
+
+        $('.fixed-plugin a').click(function(event) {
+          // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .active-color span').click(function() {
+          $full_page_background = $('.full-page-background');
+
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-color', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .background-color .badge').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('background-color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-background-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .img-holder').click(function() {
+          $full_page_background = $('.full-page-background');
+
+          $(this).parent('li').siblings().removeClass('active');
+          $(this).parent('li').addClass('active');
+
+
+          var new_image = $(this).find("img").attr('src');
+
+          if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            $sidebar_img_container.fadeOut('fast', function() {
+              $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+              $sidebar_img_container.fadeIn('fast');
+            });
+          }
+
+          if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $full_page_background.fadeOut('fast', function() {
+              $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+              $full_page_background.fadeIn('fast');
+            });
+          }
+
+          if ($('.switch-sidebar-image input:checked').length == 0) {
+            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+          }
+        });
+
+        $('.switch-sidebar-image input').change(function() {
+          $full_page_background = $('.full-page-background');
+
+          $input = $(this);
+
+          if ($input.is(':checked')) {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar_img_container.fadeIn('fast');
+              $sidebar.attr('data-image', '#');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page_background.fadeIn('fast');
+              $full_page.attr('data-image', '#');
+            }
+
+            background_image = true;
+          } else {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar.removeAttr('data-image');
+              $sidebar_img_container.fadeOut('fast');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page.removeAttr('data-image', '#');
+              $full_page_background.fadeOut('fast');
+            }
+
+            background_image = false;
+          }
+        });
+
+        $('.switch-sidebar-mini input').change(function() {
+          $body = $('body');
+
+          $input = $(this);
+
+          if (md.misc.sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            md.misc.sidebar_mini_active = false;
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+          } else {
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+            setTimeout(function() {
+              $('body').addClass('sidebar-mini');
+
+              md.misc.sidebar_mini_active = true;
+            }, 300);
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+
+        });
+      });
+    });
+  </script>
+    <script>
+        $(document).ready(function() {
+          // Javascript method's body can be found in assets/js/demos.js
+          md.initDashboardPageCharts();
+    
+        });
+    </script>
+
+{% endblock %}
