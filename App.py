@@ -235,7 +235,6 @@ def payCreditFee(id):
 
 
 #Routes
-
 @app.route("/sign-in", methods=['GET','POST'])
 def signin():
     return render_template("signIn.html")
